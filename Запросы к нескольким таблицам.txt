@@ -1,0 +1,15 @@
+Составьте запрос, выбирающий из таблиц Goods и Goods_Spendings и возвращающий перечень названий отслеживаемых товаров и всех потраченных на них сумм.
+select Goods_Name, Cost from Goods g, Goods_Spendings gs where g.Goods_ID = gs.Goods_ID 
+
+Составьте запрос к таблицам Categories и Spendings, который возвращает название категории покупки, название магазина и потраченную сумму для всех покупок, относящихся к категории с номером 4.
+select Category, Shop, Amount from Categories c, Spendings sp where c.Category_ID = sp.Category_ID and c.Category_ID = 4
+
+Составьте запрос к таблицам Goods и Goods_Spendings, возвращающий наименование товара и количество купленных единиц по всем покупкам для товара «Пиво».
+select Goods_Name, Quantity from Goods g, Goods_Spendings gs where g.Goods_ID = gs.Goods_ID and Goods_Name = 'Пиво'
+
+Доработайте предыдущий запрос, добавив к результатам дату покупки из таблицы Spendings. Таким образом, ваш запрос должен обращаться к трём таблицам (Goods, Spendings и Good_Spendings) и возвращать наименование товара, количество купленных единиц и дату каждой покупки для товара «Пиво».
+select Goods_Name, Quantity, Spending_Date from Goods g, Goods_Spendings gs, Spendings sp where g.Goods_ID = gs.Goods_ID and sp.Spending_ID = gs.Spending_ID and Goods_Name = 'Пиво'
+
+Составьте запрос, обращающийся ко всем четырём таблицам (Categories, Spendings, Goods, Goods_Spendings), возвращающий следующую информацию обо всех покупках отслеживаемых товаров: название категории, название товара, название магазина и дату покупки.
+select Category, Goods_Name, Shop, Spending_Date from Categories c, Spendings sp, Goods g, Goods_Spendings gs where c.Category_ID = sp.Category_ID and sp.Spending_ID = gs.Spending_ID and g.Goods_ID = gs.Goods_ID
+
