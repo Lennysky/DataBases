@@ -1,0 +1,14 @@
+Составьте запрос, возвращающий все поля всех записей таблицы Categories.
+select * from categories
+
+Составьте запрос, возвращающий перечень названий всех товаров, по которым ведётся детализированный учёт расходов.
+select Goods_Name from Goods
+
+Составьте запрос, возвращающий названия и описание всех категорий расходов.
+select Category, Category_Description from Categories
+
+Составьте запрос, возвращающий описание категории с номером 1.
+select Category_Description from Categories where Category_ID = 1
+
+Составьте запрос, возвращающий название и описание категории с номером 2.
+select Category, Category_Description FROM Categories where Category_ID = 2
